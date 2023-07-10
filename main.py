@@ -38,40 +38,42 @@ def spin():
         if choose_number == 0:
             wl_label.config(text="Tie! - " + " Computer:Bad luck")
         elif choose_number == 1:
-            wl_label.config(text="YOU Loose - " + " Computer: I am better ")
+            wl_label.config(text="You Loose - " + " Computer: I am better ")
         elif choose_number == 2:
-            wl_label.config(text="YOU Won - " + " Computer: You won by luck")
+            wl_label.config(text="You Won - " + " Computer: You won by luck")
 
     elif user_select_value == 1:
         if choose_number == 1:
             wl_label.config(text="Tie! - " + " Computer: Nice game")
         elif choose_number == 0:
-            wl_label.config(text="YOU Won - " + " Computer: Shit how you are better")
+            wl_label.config(text="You Won - " + " Computer: Woow how You are better")
         elif choose_number == 2:
-            wl_label.config(text="YOU Loose - " + " Computer: booo")
+            wl_label.config(text="You Loose - " + " Computer: Booo LOL")
 
     elif user_select_value == 2:
         if choose_number == 2:
             wl_label.config(text="Tie!")
         elif choose_number == 0:
             wl_label.config(
-                text="YOU Loose - "
+                text="You Loose - "
                 + " Computer: I am playing this game since i was born"
             )
         elif choose_number == 1:
-            wl_label.config(text="YOU Won")
+            wl_label.config(text="You Won")
 
 
 # Adding dropdown box for Rock,Paper,Scissors
-user_select = ttk.Combobox(root, value=["Rock", "Paper", "Scissors"])
+user_select = ttk.Combobox(
+    root, font=("arial", 15), width=10, height=4, value=["Rock", "Paper", "Scissors"]
+)
 user_select.current(0)
 user_select.pack()
 
 # Add Labels,Button
-wl_label = Label(root, text="", font=("arial", 10), width=50, height=4)
+wl_label = Label(root, text="", font=("arial", 15), width=60, height=4)
 wl_label.pack()
 
-button = Button(root, text="Spin!", font=("bell mt", 10), command=spin)
+button = Button(root, text="Spin!", font=("bell mt", 15), command=spin)
 button.pack()
 
 root.mainloop()
