@@ -1,17 +1,24 @@
 import random
 
+# Dictionary mapping input characters to game options
 my_dict = {"R": "Rock", "P": "Paper", "S": "Scissors"}
+
+# Initializing user and computer scores
 user_count = 0
 comp_count = 0
 
+# Asking user for the number of games they want to play
 games = int(input("\nEnter the number of games you want to play: "))
 
+# Looping until the total number of games played reaches the desired number
 while comp_count + user_count < games:
     flag = 0
 
+    # Asking for user's input and converting it to uppercase
     user_input = input("\nUser's Input: ")[0]
     user_input = user_input.upper()
 
+    # Checking if user's input is valid (exists in the dictionary)
     for i in my_dict.keys():
         if user_input == i:
             flag = 1
@@ -20,9 +27,13 @@ while comp_count + user_count < games:
         print("INVALID INPUT")
         continue
 
+    # Generating computer's input randomly using dictionary keys
     comp_input = random.choice(list(my_dict.keys()))
 
+    # Printing computer's input
     print("Computer's Input: ", my_dict[comp_input])
+
+    # Updating scores based on the rules of the game
     if (
         (user_input == "R" and comp_input == "P")
         or (user_input == "P" and comp_input == "S")
@@ -38,12 +49,15 @@ while comp_count + user_count < games:
     else:
         print("TIE")
 
+    # Printing the current scores
     print("\nSCORE:")
     print("User Score:", user_count, "\tComputer Score:", comp_count, "\n")
 
 
 print("\n\t\tFINAL SCORE:")
 print("User Score:", user_count, "\t\t\tComputer Score:", comp_count, "\n")
+
+# Checking and printing the winner or tie result
 if user_count > comp_count:
     print("\n\tCONGRATULATIONS! YOU WON!")
 elif user_count < comp_count:
