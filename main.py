@@ -36,27 +36,27 @@ def spin():
 
     if user_select_value == 0:
         if choose_number == 0:
-            wl_label.config(text="Tie! - " + " Computer:Bad luck")
+            wl_label.config(text="Tie! " + "\nComputer : Bad luck")
         elif choose_number == 1:
-            wl_label.config(text="You Loose - " + " Computer: I am better ")
+            wl_label.config(text="You Loose " + "\nComputer : I am better ")
         elif choose_number == 2:
-            wl_label.config(text="You Won - " + " Computer: You won by luck")
+            wl_label.config(text="You Won " + "\nComputer : You won by luck")
 
     elif user_select_value == 1:
         if choose_number == 1:
-            wl_label.config(text="Tie! - " + " Computer: Nice game")
+            wl_label.config(text="Tie! " + "\nComputer : Nice game")
         elif choose_number == 0:
-            wl_label.config(text="You Won - " + " Computer: Woow how You are better")
+            wl_label.config(text="You Won " + "\nComputer : Woow! You are better")
         elif choose_number == 2:
-            wl_label.config(text="You Loose - " + " Computer: Booo LOL")
+            wl_label.config(text="You Loose " + "\nComputer : Booo LOL")
 
     elif user_select_value == 2:
         if choose_number == 2:
             wl_label.config(text="Tie!")
         elif choose_number == 0:
             wl_label.config(
-                text="You Loose - "
-                + " Computer: I am playing this game since i was born"
+                text="You Loose "
+                + " \nComputer : I am playing this \ngame since i was born"
             )
         elif choose_number == 1:
             wl_label.config(text="You Won")
