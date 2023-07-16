@@ -13,18 +13,12 @@ games = int(input("\nEnter the number of games you want to play: "))
 # Looping until the total number of games played reaches the desired number
 while games > 0:
     games -= 1
-    flag = 0
 
     # Asking for user's input and converting it to uppercase
-    user_input = input("\nUser's Input: ")[0]
-    user_input = user_input.upper()
+    user_input = input("\nUser's Input: ")[0].upper()
 
     # Checking if user's input is valid (exists in the dictionary)
-    for i in my_dict.keys():
-        if user_input == i:
-            flag = 1
-            break
-    if flag != 1:
+    if user_input not in my_dict:
         print("INVALID INPUT")
         continue
 
@@ -40,13 +34,13 @@ while games > 0:
         or (user_input == "P" and comp_input == "S")
         or (user_input == "S" and comp_input == "R")
     ):
-        comp_count = comp_count + 1
+        comp_count += 1
     elif (
         (user_input == "P" and comp_input == "R")
         or (user_input == "S" and comp_input == "P")
         or (user_input == "R" and comp_input == "S")
     ):
-        user_count = user_count + 1
+        user_count += 1
     else:
         print("TIE")
 
