@@ -11,7 +11,8 @@ comp_count = 0
 games = int(input("\nEnter the number of games you want to play: "))
 
 # Looping until the total number of games played reaches the desired number
-while comp_count + user_count < games:
+while games > 0:
+    games -= 1
     flag = 0
 
     # Asking for user's input and converting it to uppercase
