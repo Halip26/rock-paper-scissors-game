@@ -48,7 +48,6 @@ while games > 0:
     print("\nSCORE:")
     print("User Score:", user_count, "\tComputer Score:", comp_count, "\n")
 
-
 print("\n\t\tFINAL SCORE:")
 print("User Score:", user_count, "\t\t\tComputer Score:", comp_count, "\n")
 
