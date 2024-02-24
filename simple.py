@@ -3,21 +3,21 @@ import random
 # Dictionary yang mengaitkan karakter input dengan pilihan permainan
 my_dict = {"R": "Batu", "P": "Kertas", "S": "Gunting"}
 
-# Inisialisasi skor pengguna dan komputer
+# Inisialisasi skor Pemain dan komputer
 user_count = 0
 comp_count = 0
 
-# Meminta pengguna untuk memasukkan jumlah permainan yang ingin dimainkan
+# Meminta Pemain untuk memasukkan jumlah permainan yang ingin dimainkan
 games = int(input("\nMasukkan jumlah permainan yang ingin Anda mainkan: "))
 
 # Melakukan perulangan sampai jumlah total permainan mencapai jumlah yang diinginkan
 while games > 0:
     games -= 1
 
-    # Meminta input dari pengguna dan mengonversinya menjadi huruf kapital
-    user_input = input("\nInput Pengguna: ")[0].upper()
+    # Meminta input dari Pemain dan mengonversinya menjadi huruf kapital
+    user_input = input("\nInput Pemain: ")[0].upper()
 
-    # Memeriksa apakah input pengguna valid (ada dalam kamus)
+    # Memeriksa apakah input Pemain valid (ada dalam kamus)
     if user_input not in my_dict:
         print("INPUT TIDAK VALID")
         continue
@@ -46,10 +46,10 @@ while games > 0:
 
     # Mencetak skor saat ini
     print("\nSKOR:")
-    print("Skor Pengguna:", user_count, "\tSkor Komputer:", comp_count, "\n")
+    print("Skor Pemain:", user_count, "\tSkor Komputer:", comp_count, "\n")
 
 print("\n\t\tSKOR AKHIR:")
-print("Skor Pengguna:", user_count, "\t\tSkor Komputer:", comp_count, "\n")
+print("Skor Pemain:", user_count, "\t\tSkor Komputer:", comp_count, "\n")
 
 # Memeriksa dan mencetak pemenang atau hasil seri
 if user_count > comp_count:
