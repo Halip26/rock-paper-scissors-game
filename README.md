@@ -1,4 +1,4 @@
-# 2 Rock Paper Scissors Games
+# 2 Players of the Simple Rock Paper Scissors Game
 
   Introducing the Rock Paper Scissors Games:
 
@@ -42,7 +42,7 @@ else:
 
   [GUI Rock Paper Scissors](main.py)
 
-## 2. A Simple Rock Papcer Scissors Game
+## 2. A Simple Rock Paper Scissors Game
 
   [A Simple Rock Papcer Scissors](simple.py)
 
