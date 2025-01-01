@@ -1,56 +1,63 @@
-# 2 Players of the Simple Rock Paper Scissors Game
+# Rock-Paper-Scissors Game
 
-  Introducing the Rock Paper Scissors Games:
+This is a simple Rock-Paper-Scissors game implemented in Python. The project consists of two main files: `simple.py` and `main.py`.
 
-Are you ready for some friendly competition? Look no further than our Rock Paper Scissors Games project! Get ready to go head-to-head against an AI opponent in the ultimate test of strategy and luck.
+## Files
 
-With our carefully crafted code, this classic game comes to life in a digital format. The rules are simple: choose between rock, paper, or scissors, and see who comes out on top. Will you make the right move to beat your opponent?
+### simple.py
 
-Our AI programming assistant ensures that every game is uniquely challenging. Prepare yourself for unexpected twists and turns as you try to outsmart the computer. Will you be the ultimate Rock Paper Scissors champion?
+This script runs a command-line version of the Rock-Paper-Scissors game. The player is asked to input the number of games they want to play, and then they play against the computer. The computer's choices are generated randomly. The scores are updated and displayed after each game, and the final score is displayed at the end.
 
-Ramp up the excitement by inviting friends to join in on the fun. Take turns battling against each other or collaborate to beat the AI opponent. With engaging gameplay and a user-friendly interface, everyone can easily join in on the action.
+### main.py
 
-So what are you waiting for? Dive into the world of Rock Paper Scissors Games now and test your skills. Whether you're a seasoned veteran or new to the game, this project guarantees endless entertainment and friendly competition.
+This script runs a graphical version of the Rock-Paper-Scissors game using the Tkinter library. The player can select their choice from a dropdown menu, and the computer's choice is displayed on the screen. The game logic is similar to the command-line version, but the interface is graphical.
 
-Note: The code for the Rock Paper Scissors Games project is provided below:
+## Requirements
 
-```python
-# Rock Paper Scissors game
+- Python 3.x
+- Tkinter (usually included with Python installations)
 
-import random
+## How to Run
 
-print("--- Rock, Paper, Scissors Game ---")
-print("Choose your weapon: ")
-print("1. Rock")
-print("2. Paper")
-print("3. Scissors")
+### Command-Line Version
 
-player_choice = int(input("Enter your choice (1-3): "))
+1. Open a terminal or command prompt.
+2. Navigate to the directory containing `simple.py`.
+3. Run the script using the command:
 
-computer_choice = random.randint(1, 3)
+   ```sh
+   python simple.py
+   ```
 
-if player_choice == computer_choice:
-    print("It's a tie!")
-elif (player_choice == 1 and computer_choice == 3) or (player_choice == 2 and computer_choice == 1) or (player_choice == 3 and computer_choice == 2):
-    print("Congratulations! You win!")
-else:
-    print("Oops! Computer wins!")
+### Graphical Version
 
-```
+1. Open a terminal or command prompt.
+2. Navigate to the directory containing
 
-## 1. GUI Rock Paper Scissors Game
+main.py
 
-  [GUI Rock Paper Scissors](main.py)
+.
+3. Run the script using the command:
 
-## 2. A Simple Rock Paper Scissors Game
+   ```bash
+   python main.py
+   ```
 
-  [A Simple Rock Papcer Scissors](simple.py)
+## How to Play
 
-### To be Played with a Computer
-  
-* You can enter the number of games you want to play.
-* There is also a score window which is displayed after every turn.
+### Command-Line Version
 
-### Example Game
+1. Enter the number of games you want to play.
+2. Enter your choice for each game (R for Rock, P for Paper, S for Scissors).
+3. The computer's choice and the current score will be displayed after each game.
+4. The final score and the winner will be displayed at the end.
 
-![Game](https://i.postimg.cc/7Y2TJsVJ/Capture.png)
+### Graphical Version
+
+1. Select your choice from the dropdown menu.
+2. Click the button to see the computer's choice.
+3. The game will display the computer's choice on the screen.
+
+## License
+
+This project is licensed under the MIT License.
