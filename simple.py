@@ -1,34 +1,34 @@
 import random
 
-# Dictionary yang mengaitkan karakter input dengan pilihan permainan
-my_dict = {"R": "Batu", "P": "Kertas", "S": "Gunting"}
+# Dictionary that maps input characters to game choices
+my_dict = {"R": "Rock", "P": "Paper", "S": "Scissors"}
 
-# Inisialisasi skor Pemain dan komputer
+# Initialize Player and computer scores
 user_count = 0
 comp_count = 0
 
-# Meminta Pemain untuk memasukkan jumlah permainan yang ingin dimainkan
-games = int(input("\nMasukkan jumlah permainan yang ingin Anda mainkan: "))
+# Ask the Player to enter the number of games they want to play
+games = int(input("\nEnter the number of games you want to play: "))
 
-# Melakukan perulangan sampai jumlah total permainan mencapai jumlah yang diinginkan
+# Loop until the total number of games reaches the desired amount
 while games > 0:
     games -= 1
 
-    # Meminta input dari Pemain dan mengonversinya menjadi huruf kapital
-    user_input = input("\nInput Pemain: ")[0].upper()
+    # Ask for Player input and convert it to uppercase
+    user_input = input("\nPlayer Input: ")[0].upper()
 
-    # Memeriksa apakah input Pemain valid (ada dalam kamus)
+    # Check if the Player's input is valid (exists in the dictionary)
     if user_input not in my_dict:
-        print("INPUT TIDAK VALID")
+        print("INVALID INPUT")
         continue
 
-    # Menghasilkan input komputer secara acak menggunakan kunci kamus
+    # Generate computer input randomly using dictionary keys
     comp_input = random.choice(list(my_dict.keys()))
 
-    # Mencetak input komputer
-    print("Input Komputer: ", my_dict[comp_input])
+    # Print computer input
+    print("Computer Input: ", my_dict[comp_input])
 
-    # Memperbarui skor berdasarkan aturan permainan
+    # Update scores based on game rules
     if (
         (user_input == "R" and comp_input == "P")
         or (user_input == "P" and comp_input == "S")
@@ -42,19 +42,19 @@ while games > 0:
     ):
         user_count += 1
     else:
-        print("SERI")
+        print("TIE")
 
-    # Mencetak skor saat ini
-    print("\nSKOR:")
-    print("Skor Pemain:", user_count, "\tSkor Komputer:", comp_count, "\n")
+    # Print current score
+    print("\nSCORE:")
+    print("Player Score:", user_count, "\tComputer Score:", comp_count, "\n")
 
-print("\n\t\tSKOR AKHIR:")
-print("Skor Pemain:", user_count, "\t\tSkor Komputer:", comp_count, "\n")
+print("\n\t\tFINAL SCORE:")
+print("Player Score:", user_count, "\t\tComputer Score:", comp_count, "\n")
 
-# Memeriksa dan mencetak pemenang atau hasil seri
+# Check and print the winner or tie result
 if user_count > comp_count:
-    print("\n\tSELAMAT! ANDA MENANG!")
+    print("\n\tCONGRATULATIONS! YOU WIN!")
 elif user_count < comp_count:
-    print("\n\t\tMAAF! ANDA KALAH!")
+    print("\n\t\tSORRY! YOU LOSE!")
 else:
-    print("\n\t\tOOPS! INI SERI!")
+    print("\n\t\tOOPS! IT'S A TIE!")
