@@ -1,60 +1,68 @@
 import random
+import time
 
-# Dictionary that maps input characters to game choices
+# Tipe data collection dictionary
 my_dict = {"R": "Rock", "P": "Paper", "S": "Scissors"}
 
-# Initialize Player and computer scores
-user_count = 0
-comp_count = 0
+# inisialisasi player score & computer
+player_count = 0
+computer_count = 0
 
-# Ask the Player to enter the number of games they want to play
+# ask player to input how many player want to play
 games = int(input("\nEnter the number of games you want to play: "))
 
-# Loop until the total number of games reaches the desired amount
+# Repeats until the total number of games reaches the desired number.
 while games > 0:
     games -= 1
 
-    # Ask for Player input and convert it to uppercase
-    user_input = input("\nPlayer Input: ")[0].upper()
+    # asking input from player & connverting to Uppercase
+    player_input = input("\nPlayer's input (R, P, S): ")[0].upper()
 
-    # Check if the Player's input is valid (exists in the dictionary)
-    if user_input not in my_dict:
-        print("INVALID INPUT")
+    # Check if the user input is valid (exists in the dictionary)
+    if player_input not in my_dict:
+        print("Your input is invalid, try again!")
         continue
 
-    # Generate computer input randomly using dictionary keys
+    # Randomly generate computer input using dictionary keys
     comp_input = random.choice(list(my_dict.keys()))
 
-    # Print computer input
-    print("Computer Input: ", my_dict[comp_input])
+    print("-" * 25)
+    time.sleep(0.5)
+    # Print randomly generate computer's choice
+    print(f"Computer input: {my_dict[comp_input]}")
 
-    # Update scores based on game rules
+    # Updating scores based on game rules
     if (
-        (user_input == "R" and comp_input == "P")
-        or (user_input == "P" and comp_input == "S")
-        or (user_input == "S" and comp_input == "R")
+        (player_input == "R" and comp_input == "P")
+        or (player_input == "P" and comp_input == "S")
+        or (player_input == "S" and comp_input == "R")
     ):
-        comp_count += 1
+        computer_count += 1
     elif (
-        (user_input == "P" and comp_input == "R")
-        or (user_input == "S" and comp_input == "P")
-        or (user_input == "R" and comp_input == "S")
+        (player_input == "P" and comp_input == "R")
+        or (player_input == "S" and comp_input == "P")
+        or (player_input == "R" and comp_input == "S")
     ):
-        user_count += 1
+        player_count += 1
     else:
-        print("TIE")
+        print("\nTIE!")
 
-    # Print current score
-    print("\nSCORE:")
-    print("Player Score:", user_count, "\tComputer Score:", comp_count, "\n")
+    # Print currently score
+    print("\n\t\t\tSCORES:")
+    print(
+        "Player's Score:", player_count, "\t\tComputer's Score:", computer_count, "\n"
+    )
 
-print("\n\t\tFINAL SCORE:")
-print("Player Score:", user_count, "\t\tComputer Score:", comp_count, "\n")
+# Print FINAL Score
+print("\nFINAL SCORE:")
+print("Player's Score:", player_count, "\t\tComputer's Score:", computer_count, "\n")
 
-# Check and print the winner or tie result
-if user_count > comp_count:
-    print("\n\tCONGRATULATIONS! YOU WIN!")
-elif user_count < comp_count:
-    print("\n\t\tSORRY! YOU LOSE!")
+print("-" * 25)
+time.sleep(0.5)
+# Check & print the winner or tie result
+if player_count > computer_count:
+    print("\n\tCONGRATULATIONS, YOU WON!")
+elif player_count < computer_count:
+    print("\n\tSORRY, YOU ARE LOSE!")
 else:
-    print("\n\t\tOOPS! IT'S A TIE!")
+    print("\n\tOOPPS, IT'S TIE!")
